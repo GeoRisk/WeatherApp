@@ -17,7 +17,8 @@ $(document).ready(function() {
 
 	//userCity is currently dummy data. Need to feed user input here.
 	$(".location-btn").click(function() {
-        	event.preventDefault();
+        
+        event.preventDefault();
 
 		// console.log("inside the button click");
 
@@ -25,6 +26,7 @@ $(document).ready(function() {
 		console.log("user city is: " +userCity);	
 
 		$(".location-btn").empty();
+		$("#user-location").empty();
 
 		//This is supposed to add the city value to the MySQL database. DOES NOT WORK.
 		//==============
@@ -32,6 +34,7 @@ $(document).ready(function() {
 		$.post("api/favorites", function(userCity) {
 			city: userCity
 		});
+
 		//==============
 
 		var userSearchURL = weatherURL + userCity + weatherKey;

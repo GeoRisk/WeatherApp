@@ -10,16 +10,17 @@ module.exports = function(sequelize, DataTypes) {
 
   
 
-//Associate the favorites with the user and create foreign key.
-Favorites.associate = function(models) {
-  Favorites.belongsTo(models.User, {
-    foreignKey: {
-      name: id,
-      allowNull: false
-  }
-});
+  //Associate the favorites with the user and create foreign key.
+  Favorites.associate = function(models) {
+    Favorites.belongsTo(models.User, {
+      foreignKey: {
+        name: "id",
+        allowNull: false,
+      }
+    });
 
-return Favorites;
+  };
+
+  return Favorites;
 
 };
-
