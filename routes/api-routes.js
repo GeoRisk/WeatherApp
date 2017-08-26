@@ -52,17 +52,4 @@ module.exports = function(app) {
     }
   });
 
-//Create the favorites table.
-app.post("/api/favorites", function(req, res) {
-    console.log(req.body);
-    db.Favorites.create({
-      city: req.body.city,
-    });
-  });
-
-  //Pull data from the favorites table.
-  app.get("api/favorites", function(req, res) {
-    console.log(req.body);
-  });
-
 };
