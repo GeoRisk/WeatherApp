@@ -39,7 +39,14 @@ $(document).ready(function() {
 			temp = Math.round(temp);
 			console.log("temp is: "+temp);
 
+			var description = response.weather[0].main;
+			console.log("How's the weather? " + description);
 
+			var wind = response.wind.speed;
+			console.log("wind speed: "+wind);
+
+			var cityName = response.name;
+			console.log("JSON city name: "+cityName);
 
 		});		
 
