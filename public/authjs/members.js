@@ -47,15 +47,26 @@ $(document).ready(function() {
 			var temp = response.main.temp * 9 / 5 - 459.67;
 			temp = Math.round(temp);
 			console.log("temp is: "+temp);
+			$("#nowTemp").append(temp);
 
 			var description = response.weather[0].main;
 			console.log("How's the weather? " + description);
+			$("#nowWeather").append(description);
+
+			// if(response.weather.)
 
 			var wind = response.wind.speed;
 			console.log("wind speed: "+wind);
+			$("#nowWind").append(wind);
 
 			var cityName = response.name;
 			console.log("JSON city name: "+cityName);
+			$("#nowCity").append(cityName);
+
+			var todayDate = new date();
+			todayDate = moment(todayDate).format(LL);
+			console.log(todayDate);
+			$("#todaysDate").append(todayDate);
 
 		});		
 
