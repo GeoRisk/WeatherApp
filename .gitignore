@@ -1,3 +1,9 @@
 .DS_Store
+<<<<<<< HEAD
 node_modules
 .idea/
+=======
+/node_modules
+/node_module
+node_modules
+>>>>>>> 546971f8622dcf4559e63e5ae36e3211a0fa3b61
