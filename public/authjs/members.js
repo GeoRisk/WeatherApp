@@ -15,12 +15,21 @@ $(document).ready(function() {
 
 	//userCity is currently dummy data. Need to feed user input here.
 	$(".location-btn").click(function() {
-        event.preventDefault();
+        	event.preventDefault();
 
 		// console.log("inside the button click");
 
 		var userCity = $("#user-location").val().trim().replace(" ","%20");
 		console.log("user city is: " +userCity);	
+
+		//This is supposed to add the city value to the MySQL database. DOES NOT WORK.
+		//==============
+		function addFavorites(userCity) {
+			$.post("api/favorites", {
+				city: userCity
+			});
+		};
+		//==============
 
 		var userSearchURL = weatherURL + userCity + weatherKey;
 		console.log("search ajax is: " +userSearchURL);
