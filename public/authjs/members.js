@@ -95,12 +95,8 @@ $(document).ready(function() {
 
 		});		
 
-
-
 	});
 	
-
-
 });
 
 // Testing and verifying the code worked; the below does return a JSON. 
