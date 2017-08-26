@@ -14,10 +14,10 @@ module.exports = function(sequelize, DataTypes) {
 Favorites.associate = function(models) {
   Favorites.belongsTo(models.User, {
     foreignKey: {
+      name: id,
       allowNull: false
-    }
-  });
-};
+  }
+});
 
 return Favorites;
 
