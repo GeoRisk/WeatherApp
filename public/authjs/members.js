@@ -1,3 +1,5 @@
+// var moment = require("moment");
+
 $(document).ready(function() {
 	// This file just does a GET request to figure out which user is logged in
 	// and updates the HTML on the page
@@ -62,9 +64,25 @@ $(document).ready(function() {
 			console.log("JSON city name: "+cityName);
 			$("#nowCity").append(cityName);
 
-			var todayDate = new date();
-			todayDate = moment(todayDate).format(LL);
-			console.log(todayDate);
+			// var todayDate = response.dt;
+
+			var todayDate = new Date();
+				var dd = todayDate.getDate();
+				var mm = todayDate.getMonth()+1; //January is 0!
+				var yyyy = todayDate.getFullYear();
+
+				if(dd<10) {
+				    dd = '0'+dd
+				} 
+
+				if(mm<10) {
+				    mm = '0'+mm
+				} 
+
+				todayDate = mm + '/' + dd + '/' + yyyy;
+
+			// todayDate = moment(todayDate).format(LL);
+			console.log("todays date is now: "+todayDate);
 			$("#todaysDate").append(todayDate);
 
 		});		
