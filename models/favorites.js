@@ -3,15 +3,23 @@ module.exports = function(sequelize, DataTypes) {
     // The email cannot be null, and must be a proper email before creation
     city: {
       type: DataTypes.STRING,
-      allowNull: false,
-      unique: true
+      // allowNull: false,
+      // unique: true
     }
   });
 
-  return Favorites;
+  
 
-//Left join tables in database to save user favorites.
-Favorites.belongsTo(Users, {foreignKey: "id"});
+//Associate the favorites with the user and create foreign key.
+Favorites.associate = function(models) {
+  Favorites.belongsTo(models.User, {
+    foreignKey: {
+      allowNull: false
+    }
+  });
+};
+
+return Favorites;
 
 };
 

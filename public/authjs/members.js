@@ -24,11 +24,10 @@ $(document).ready(function() {
 
 		//This is supposed to add the city value to the MySQL database. DOES NOT WORK.
 		//==============
-		function addFavorites(userCity) {
-			$.post("api/favorites", {
-				city: userCity
-			});
-		};
+		
+		$.post("api/favorites", function(userCity) {
+			city: userCity
+		});
 		//==============
 
 		var userSearchURL = weatherURL + userCity + weatherKey;
