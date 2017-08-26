@@ -24,6 +24,8 @@ $(document).ready(function() {
 		var userCity = $("#user-location").val().trim().replace(" ","%20");
 		console.log("user city is: " +userCity);	
 
+		$(".location-btn").empty();
+
 		//This is supposed to add the city value to the MySQL database. DOES NOT WORK.
 		//==============
 		
@@ -46,7 +48,7 @@ $(document).ready(function() {
 			console.log("ajax response: "+response);
 
 			var temp = response.main.temp * 9 / 5 - 459.67;
-			temp = Math.round(temp);
+				temp = Math.round(temp);
 			console.log("temp is: "+temp);
 			$("#nowTemp").append(temp);
 
@@ -54,7 +56,7 @@ $(document).ready(function() {
 			console.log("How's the weather? " + description);
 			$("#nowWeather").append(description);
 
-			// if(response.weather.)
+			// Code for whether rain/sun/etc... JSON changes depending. 
 
 			var wind = response.wind.speed;
 			console.log("wind speed: "+wind);
@@ -74,11 +76,9 @@ $(document).ready(function() {
 				if(dd<10) {
 				    dd = '0'+dd
 				} 
-
 				if(mm<10) {
 				    mm = '0'+mm
 				} 
-
 				todayDate = mm + '/' + dd + '/' + yyyy;
 
 			// todayDate = moment(todayDate).format(LL);
