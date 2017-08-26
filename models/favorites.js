@@ -9,9 +9,9 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   return Favorites;
-  
+
 //Left join tables in database to save user favorites.
-db.Favorites.belongsTo(db.Users, {foreignKey: "id"});
+Favorites.belongsTo(Users, {foreignKey: "id"});
 
 };
 
